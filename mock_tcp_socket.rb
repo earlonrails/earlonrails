@@ -1,3 +1,4 @@
+# Howdy
 require 'spec/mocks'
 
 TCP_NEW = TCPSocket.method(:new) unless defined? TCP_NEW
