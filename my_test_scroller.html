@@ -1,0 +1,73 @@
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+	var i = 0;
+	var goUp = true;
+	var blah = null;
+	
+function pageScroll(divId, speed){
+	var my_div = document.getElementById(divId);
+	if (goUp){
+		i += speed;
+	}else{
+		i -= speed;
+	}
+	if(my_div.scrollTop > (my_div.scrollHeight - 101)){
+		clearInterval(blah);
+		setTimeout('sleep()', 1000);
+		goUp = false;
+	}else if(my_div.scrollTop <= 0 ){
+		clearInterval(blah);
+		setTimeout('sleep()', 1000);
+		goUp = true;		
+	}
+	my_div.scrollTop = i;	
+}
+function sleep(){  
+	blah = setInterval("pageScroll(\"section2\", 1)", 25)
+}
+</script>
+</head>
+<body onload="sleep();" >
+<div id="section2" style="height:100px;width:375px;overflow:hidden;backgroundColor:'red';" > 
+<pre>We're no strangers to love
+You know the rules and so do I
+A full commitment's what I'm thinking of
+You wouldn't get this from any other guy
+I just wanna tell you how I'm feeling
+Gotta make you understand
+Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you
+We've know each other for so long
+Your heart's been aching
+But you're too shy to say it
+Inside we both know what's been going on
+We know the game and we're gonna play it
+And if you ask me how I'm feeling
+Don't tell me you're too blind to see
+Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you
+(Repeat Chorus)
+Give you up, give you up
+Give you up, give you up
+Never gonna give,
+Never gonna give, give you up
+Never gonna give,
+Never gonna give, give you up
+(Last four lines repeat)
+I just wanna tell you how I'm feeling
+Gotta make you understand
+(Chorus times three)
+</pre>
+</div>
+</body>
+</html>
