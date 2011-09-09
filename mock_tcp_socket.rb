@@ -1,5 +1,4 @@
-# Howdy
-require 'spec/mocks'
+require 'mocks'
 
 TCP_NEW = TCPSocket.method(:new) unless defined? TCP_NEW
 
@@ -18,6 +17,14 @@ class FakeTCPSocket
 
   def write(some_text = nil)
   end
+  
+  def readchar
+      return 6   
+  end
+  
+  def read(num)
+    return num > @canned_response.size ? @canned_response : @canned_response[0..num]
+  end
 
   def set_canned(response)
      @canned_response = response
@@ -32,7 +39,6 @@ def mock_tcp_next_request(string)
     cm
   }
 end
-
 
 def unmock_tcp
   TCPSocket.stub!(:new).and_return { TCP_NEW.call }
