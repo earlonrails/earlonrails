@@ -1,5 +1,6 @@
 Hey there. 
 
 Using Rspec?
-Need to Mock a network connection?
+Need to mock a network connection?
 Use this TCP mocker type setup ! 
+Aslo try the curl mocker !
